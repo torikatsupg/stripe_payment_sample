@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stripe_payment_sample/service/stripe_service.dart';
 
 class App extends StatelessWidget {
   @override
@@ -52,7 +53,7 @@ class App extends StatelessWidget {
         ),
         title: Text('pay via new card'),
       ),
-      onTap: () => print('on tap'),
+      onTap: payViaNewCard,
     );
   }
 
