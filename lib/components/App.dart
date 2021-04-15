@@ -53,7 +53,7 @@ class App extends StatelessWidget {
         ),
         title: Text('pay via new card'),
       ),
-      onTap: payViaNewCard,
+      onTap: StripeService().payViaNewCard,
     );
   }
 
