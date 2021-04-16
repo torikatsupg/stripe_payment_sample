@@ -15,3 +15,14 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 # stripe_payment_sample
+
+# memo
+
+1. create payment intent
+Hit `https://api.stripe.com/v1/payment_intents` and get `client_secret`
+
+2. create payment method
+payment method may be a way of payment. e.g. card, applePay, googlePay...
+
+3. confirm payment
+Confirm payment with `paymentIntent` and `paymentMethod`
