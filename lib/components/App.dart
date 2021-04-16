@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:stripe_payment/stripe_payment.dart';
 import 'package:stripe_payment_sample/service/stripe_service.dart';
 
 class App extends StatelessWidget {
@@ -59,6 +61,8 @@ class App extends StatelessWidget {
 
   /// 登録済みのカードで決済をするボタン
   Widget _buildPayViaExistingCardButton(BuildContext context) {
+    final creditCard =
+        CreditCard(number: '4242424242424242', expMonth: 5, expYear: 24, cvc: '424');
     return InkWell(
       child: ListTile(
         leading: Icon(
@@ -67,7 +71,7 @@ class App extends StatelessWidget {
         ),
         title: Text('pay via existing card'),
       ),
-      onTap: () => print('on tap'),
+      onTap: () => StripeService().payViaExistingCard(creditCard),
     );
   }
 }
